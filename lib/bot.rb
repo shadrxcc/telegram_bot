@@ -1,6 +1,7 @@
 require 'telegram_bot'
+require_relative 'more'
 
-token = ''
+token = '5083428991:AAFtLxZNjJym-8pbCRl7Qq-jymq9HWA3Tto'
 bot = TelegramBot.new(token: token)
 
 bot.get_updates(fail_silently: true) do |message|
@@ -8,7 +9,7 @@ bot.get_updates(fail_silently: true) do |message|
   command = message.get_command_for(bot)
 
   message.reply do |reply|
-    case command
+    reply.text = case command
     when /start/i
       reply.text = "Hello, #{message.from.first_name}. 🤖 and welcome to Movie Update. Try the /update command to get list of top 10 movies for the week."
     when /update/i
@@ -52,9 +53,13 @@ bot.get_updates(fail_silently: true) do |message|
       reply.text = "Morbius (2022) /n Directed by: Daniel Espinosa /n Starring: Jared Leto, Matt Smith, Adria Arjona, Jared Harris, Al Madrigal, Tyrese Gibson, Michael Keaton /n Opening on: April 1, 2022 /n Sony’s latest entry in its Spider-Man-adjacent franchise of connected films is the origin story of a scientist who inadvertently turns himself into a vampire in his efforts to cure himself of a rare blood disease. Swedish director Daniel Espinosa (Safe House, Life) takes up the helm, and Michael Keaton — who appeared in the MCU’s Spider-Man: Homecoming as prominent Spider-Man villain Vulture — is set to make an appearance, which has all kinds of crossover implications. Watch trailer here, https://youtu.be/wPweUiiOhVA . Use the command /back to return to movie list"  
     when /back/i
       reply.text = reply.text = "TOP 10 MOVIE RECOMMENDATIONS /n 1. The 355 /n 2. Scream /n 3. Jackass Forever /n 4. Marry Me /n 5. Death on Nile /n 6. Uncharted /n 7. The Batman /n 8.Turning Red /n 9. The Lost City /n 10. Morbius"
-    else
-      reply.text = "I have no idea what #{command.inspect} means."
-    end
+        when '/more'
+            values = Info.new
+                   value = values.select_first
+                 "Title: #{value['original_title']} /nOverview: #{value['overview']}" 
+        else
+                   "I have no idea what #{command.inspect} means."
+                 end
     puts "sending #{reply.text.inspect} to @#{message.from.username}"
     reply.send_with(bot)
   end

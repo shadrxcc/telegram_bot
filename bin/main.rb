@@ -1,3 +1,2 @@
-require_relative '../lib/bot.rb'
-puts 'Bot is online...'
+require_relative '../lib/bot'
 Bot.new
