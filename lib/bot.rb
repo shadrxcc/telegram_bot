@@ -14,8 +14,8 @@ bot.get_updates(fail_silently: true) do |message|
                    reply.text = "Hello, #{message.from.first_name}. 🤖 and welcome to Movie Update. Try the /update command to get list of top 10 movies for the week."
                  when /update/i
                    reply.text = "TOP 10 MOVIE RECOMMENDATIONS
-      /n 1. The 355
-      /n 2. Scream
+      /n 1. The 355 
+      /n 2. Scream 
       /n 3. Jackass Forever
       /n 4. Marry Me
       /n 5. Death on Nile
@@ -57,7 +57,7 @@ bot.get_updates(fail_silently: true) do |message|
                    reply.text = reply.text = 'TOP 10 MOVIE RECOMMENDATIONS /n 1. The 355 /n 2. Scream /n 3. Jackass Forever /n 4. Marry Me /n 5. Death on Nile /n 6. Uncharted /n 7. The Batman /n 8.Turning Red /n 9. The Lost City /n 10. Morbius'
                  when '/more'
                    values = Info.new
-                   value = values.select_first
+                   value = values.select_random
                    "Title: #{value['original_title']} /nOverview: #{value['overview']}"
                  else
                    "I have no idea what #{command.inspect} means."
