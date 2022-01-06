@@ -1,5 +1,4 @@
-require_relative '../lib/more.rb'
-
+require_relative '../lib/more'
 
 # RSpec.describe Motivate do
 #   describe '#make_the_request' do
@@ -19,8 +18,9 @@ require_relative '../lib/more.rb'
 #     let(:random) { Motivate.new }
 #     let(:request_random) { random.select_random }
 
-    it 'should return an Hash' do
-     expect(request_random.class).to eql(Hash)   end
+it 'should return an Hash' do
+  expect(request_random.class).to eql(Hash)
+end
 
 #     it 'should return a key and a value' do
 #       expect(request_random.length).to eql(2)
@@ -29,9 +29,9 @@ require_relative '../lib/more.rb'
 # end
 
 describe Info do
-    describe "#request" do
-        it 'should return a response when the request goes through successfully' do
-            expect(@value).to eql(Array)
-        end
+  describe '#request' do
+    it 'should return a response when the request goes through successfully' do
+      expect(@value).to eql(Array)
     end
+  end
 end
