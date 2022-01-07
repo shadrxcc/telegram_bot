@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
 gem 'dotenv-rails'
 gem 'figaro'
+gem 'rspec'
 gem 'telegram_bot'

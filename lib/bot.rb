@@ -56,8 +56,8 @@ bot.get_updates(fail_silently: true) do |message|
                  when /back/i
                    reply.text = reply.text = 'TOP 10 MOVIE RECOMMENDATIONS /n 1. The 355 /n 2. Scream /n 3. Jackass Forever /n 4. Marry Me /n 5. Death on Nile /n 6. Uncharted /n 7. The Batman /n 8.Turning Red /n 9. The Lost City /n 10. Morbius'
                  when '/more'
-                   values = Info.new
-                   value = values.select_first
+                   values.last = Info.new
+                   value = values.select
                    "Title: #{value['original_title']} /nOverview: #{value['overview']}"
                  else
                    "I have no idea what #{command.inspect} means."

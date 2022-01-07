@@ -1,5 +1,8 @@
 ## Telegram Movie Update Bot
 > Ruby Capstone Project: Building a telegram bot that gives you updates ad details about movies for the week.
+
+![screenshot](telegram.jpg)
+
 ## Built With
 
 - Ruby
