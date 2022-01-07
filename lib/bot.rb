@@ -1,7 +1,7 @@
 require 'telegram_bot'
 require_relative 'more'
 
-token = '5083428991:AAFtLxZNjJym-8pbCRl7Qq-jymq9HWA3Tto'
+token = 'paste token here'
 bot = TelegramBot.new(token: token)
 
 bot.get_updates(fail_silently: true) do |message|
@@ -14,8 +14,8 @@ bot.get_updates(fail_silently: true) do |message|
                    reply.text = "Hello, #{message.from.first_name}. 🤖 and welcome to Movie Update. Try the /update command to get list of top 10 movies for the week."
                  when /update/i
                    reply.text = "TOP 10 MOVIE RECOMMENDATIONS
-      /n 1. The 355 
-      /n 2. Scream 
+      /n 1. The 355
+      /n 2. Scream
       /n 3. Jackass Forever
       /n 4. Marry Me
       /n 5. Death on Nile
