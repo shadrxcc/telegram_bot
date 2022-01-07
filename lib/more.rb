@@ -17,8 +17,8 @@ class Info
     JSON.parse(response)
   end
 
-  def select_random
-    @values = @values
+  def select
+    @values = @values.last
     @values
   end
 end
