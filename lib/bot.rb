@@ -1,7 +1,7 @@
 require 'telegram_bot'
 require_relative 'more'
 
-token = '5083428991:AAFtLxZNjJym-8pbCRl7Qq-jymq9HWA3Tto'
+token = 'paste token here'
 bot = TelegramBot.new(token: token)
 
 bot.get_updates(fail_silently: true) do |message|
